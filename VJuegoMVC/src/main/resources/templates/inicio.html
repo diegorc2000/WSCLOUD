@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- thymeleaf es un motor de creacion de paginas web 
+dinamicas, que nos permite escribir paginas web en funcion
+de los datos que me envie el controlador -->
+<head>
+<meta charset="ISO-8859-1">
+<title>Insertar titulo aqui</title>
+</head>
+<body>
+	<h1 style="color:green">VIDEOJUEGOS</h1>
+	
+	<form action="videojuego">
+	Busqueda: <input type="text" name="busqueda_id"/>
+	<input type="submit" value="Enviar"/>
+	</form>
+	
+	<h2 th:text="${v} ? ('ID: ' + ${v.id} + ' - ' + ${v.nombre} + ' - ' + ${v.compania}): 'No existe el videojuego'"></h2>
+	
+	    <h2>Lista de Videojuegos:</h2>
+	    <h3 style="color:red" th:each="valor : ${lista}">
+    	<span th:text="${valor.nombre}"></span>
+    	
+    	<span th:text="${valor.compania}"></span>
+	</h3>
+	
+	
+	     
+	   
+</body>
+</html>

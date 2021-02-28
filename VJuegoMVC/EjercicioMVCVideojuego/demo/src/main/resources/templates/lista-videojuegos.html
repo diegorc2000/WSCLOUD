@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista videojuegos</title>
+</head>
+
+<body>
+    <h1>Lista videojuegos</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Compania</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="valor: ${lista}">
+                    <td th:text="${valor.nombre}"></td>
+                    <td th:text="${valor.compania}"></td>
+                    <td th:text="${valor.precio}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <form action="busqueda-id" method="post">
+        <input type="text" name="id_videojuego" placeholder="Id videojuego">
+        <input type="submit" value="Ingresar">
+    </form>
+
+</body>
+
+</html>
